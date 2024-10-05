@@ -30,15 +30,15 @@ if (!isNaN(km)) {
     if (!isNaN(age)) {
         if (age >= 0 && age <= 18 ) {
             priceUnder18 = price - (price * discount20);
-            console.log(priceUnder18);
+            console.log(priceUnder18.toFixed(2));
             
         }
         else if (age >= 65) {
             priceOver65 = price - (price * discount40);
-            console.log(priceOver65);
+            console.log(priceOver65.toFixed(2));
             
         } else {
-            console.log(price);
+            console.log(price.toFixed(2));
             
         }
     } else {
