@@ -17,7 +17,7 @@ const discount40 = 0.4;
 
 // Verification if prompt input is a number or not
 
-if (!isNaN(km)) {
+if (!isNaN(km) && km >= 0) {
     price = km * kmPrice;
 
     // Age request
@@ -27,23 +27,23 @@ if (!isNaN(km)) {
     
     // Verification if prompt input is a number or not
 
-    if (!isNaN(age)) {
-        if (age >= 0 && age <= 18 ) {
+    if (!isNaN(age) && age >= 0) {
+        if (age <= 18 ) {
             priceUnder18 = price - (price * discount20);
-            console.log(priceUnder18.toFixed(2));
+            document.getElementById('yourPrice').innerHTML = `€ ${priceUnder18.toFixed(2)}`;
             
         }
         else if (age >= 65) {
             priceOver65 = price - (price * discount40);
-            console.log(priceOver65.toFixed(2));
+            document.getElementById('yourPrice').innerHTML = `€ ${priceOver65.toFixed(2)}`;
             
         } else {
-            console.log(price.toFixed(2));
+            document.getElementById('yourPrice').innerHTML = `€ ${price.toFixed(2)}`;
             
         }
     } else {
-        alert("Per favore aggiorna la pagina ed inserisci un numero nel campo dell'età");
+        alert("Per favore aggiorna la pagina ed inserisci un numero valido nel campo dell'età");
     }
 } else {
-    alert('Per favore aggiorna la pagina ed inserisci un numero');
+    alert('Per favore aggiorna la pagina ed inserisci un numero valido');
 }
